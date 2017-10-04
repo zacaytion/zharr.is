@@ -1,0 +1,53 @@
+env:
+  browser: true
+
+parser: babel-eslint
+plugins: [ "import" ]
+
+# enable ECMAScript features
+ecmaFeatures:
+  arrowFunctions: true
+  binaryLiterals: true
+  blockBindings: true
+  classes: true
+  defaultParams: true
+  destructuring: true
+  forOf: true
+  generators: true
+  jsx: true
+  modules: true
+  objectLiteralShorthandMethods: true
+  objectLiteralShorthandProperties: true
+  octalLiterals: true
+  spread: true
+  templateStrings: true
+
+extends: standard
+rules: 
+  comma-dangle: ["error", "always-multiline"]
+  space-before-function-paren: ["error", {"anonymous": "always", "named": "never", "asyncArrow": "always"}]
+  
+  # Standard
+  standard/no-callback-literal: 1
+  # Import
+  import/no-unresolved: [1, {"commonjs": true, "amd": true}]
+  import/export: 2
+  import/first: 0
+  import/no-webpack-loader-syntax: 1
+
+  # Strict Mode
+  # https://github.com/eslint/eslint/tree/master/docs/rules#strict-mode
+  strict: [2, "global"]
+
+  # Variables
+  # https://github.com/eslint/eslint/tree/master/docs/rules#variables
+  no-undef: 2
+  no-unused-vars: [2, {"args": "none"}]
+ 
+# Global scoped method and vars
+globals:
+  __dirname: true
+  require: true
+  process: true
+  ENV: true
+  module: true
