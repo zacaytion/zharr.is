@@ -5,7 +5,8 @@
     "react/prefer-stateless-function": "off",
     "react/prop-types": "off",
     "react/no-danger": "off",
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "jsx-a11y/anchor-is-valid": "off"
   },
   "settings": {
     "import/core-modules": []
