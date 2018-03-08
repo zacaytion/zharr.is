@@ -1,3 +1,13 @@
 {
-  "presets": ["emotion", "env", "react"]
+  "presets": ["env", "react"],
+  "env": {
+    "production": {
+      "plugins": [["emotion", { "hoist": true }]]
+    },
+    "development": {
+      "plugins": [
+        ["emotion", { "sourceMap": true, "autoLabel": true }]
+      ]
+    }
+  }
 }
