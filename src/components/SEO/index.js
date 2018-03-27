@@ -12,8 +12,8 @@ export default ({ postNode, postPath, postSEO }) => {
   if (postSEO) {
     const postMeta = postNode.frontmatter
     title = postMeta.title // eslint-disable-line
-    description = postNode.subTitle
-    image = postMeta.cover.childImageSharp.resize.src
+    description = postMeta.description ? postNode.description : postNode.excerpt
+    image = postMeta.cover
     postURL = config.siteUrl + realPrefix + postPath
   } else {
     title = config.siteTitle

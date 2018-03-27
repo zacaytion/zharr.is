@@ -1,10 +1,11 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Backslash from '../../styles/backslash'
 
+// Add Page title as Prop
 const Header = () => (
   <div
     style={{
-      background: 'rebeccapurple',
       marginBottom: '1.45rem',
     }}
   >
@@ -15,17 +16,8 @@ const Header = () => (
         padding: '1.45rem 1.0875rem',
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          Gatsby
-        </Link>
-      </h1>
+      <h1>Ƶ</h1>
+      <Backslash />
     </div>
   </div>
 )

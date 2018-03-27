@@ -6,6 +6,7 @@
   "dependencies": {
     "emotion": "^9.0.2",
     "emotion-server": "^9.0.2",
+    "emotion-theming": "^9.0.0",
     "gatsby": "^1.9.215",
     "gatsby-image": "^1.0.41",
     "gatsby-link": "^1.6.39",
@@ -35,6 +36,7 @@
     "gatsby-transformer-remark": "^1.7.35",
     "gatsby-transformer-sharp": "^1.6.22",
     "lodash": "^4.17.5",
+    "lodash-webpack-plugin": "^0.11.4",
     "react": "^16.2.0",
     "react-emotion": "^9.0.2",
     "react-helmet": "^5.2.0",

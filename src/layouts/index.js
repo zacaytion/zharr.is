@@ -1,11 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-
+import styled from 'react-emotion'
 import Header from '../components/Header'
+import globals from '../styles/global'
+
+const Container = styled.div`
+  min-height: 100vh;
+`
 
 const TemplateWrapper = ({ children }) => (
-  <div>
+  <Container>
     <Helmet
       title="Gatsby Default Starter"
       meta={[
@@ -24,7 +29,7 @@ const TemplateWrapper = ({ children }) => (
     >
       {children()}
     </div>
-  </div>
+  </Container>
 )
 
 TemplateWrapper.propTypes = {
