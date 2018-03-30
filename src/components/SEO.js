@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import config from '../../../data/config'
+import config from '../../data/config'
 
 export default ({ postNode, postPath, postSEO }) => {
   let title
