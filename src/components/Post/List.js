@@ -3,7 +3,7 @@ import Link from '../Link'
 
 export default ({ postEdges }) => {
   const postList = postEdges.map(({ node }) => ({
-    path: node.fields.slug,
+    path: `/blog${node.fields.slug}`,
     tags: node.frontmatter.tags,
     cover: node.frontmatter.cover,
     title: node.frontmatter.title,
