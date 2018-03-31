@@ -2,13 +2,15 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import SEO from '../components/SEO'
 import config from '../../data/config'
+import PostCategory from '../components/Post/Category'
+import PostTags from '../components/Post/Tags'
 
 export default ({ pathContext, data }) => {
   const { slug } = pathContext
   const postNode = data.markdownRemark
   const post = postNode.frontmatter
   post.id = post.id || slug
-  post.category_id = post.category_id || config.postDefaultCategoryID
+  post.category = post.category || config.postDefaultCategoryID
 
   return (
     <div>
@@ -18,8 +20,11 @@ export default ({ pathContext, data }) => {
       <SEO postPath={slug} postNode={postNode} postSEO />
       <div>
         <h1>{post.title}</h1>
+        <PostCategory category={post.category} />
         <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-        <div className="post-meta" />
+        <div className="post-meta">
+          <PostTags tags={post.tags} />
+        </div>
       </div>
     </div>
   )
