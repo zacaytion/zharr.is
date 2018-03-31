@@ -1,23 +1,27 @@
 import React from 'react'
 import styled from 'react-emotion'
+import config from '../../data/config'
 import Link from '../components/Link'
 
-// TODO: Display only relevant pages
+const { navPaths } = config
+
 // TODO: Place Links on Grid
 
 const NavigationArea = styled.div`
   grid-area: navigation;
   justify-self: end;
 `
-
-const Navigation = ({ path }) => (
-  <NavigationArea>
-    <Link to="/whoami">Whoami</Link>
-    <Link to="/blog">Blog</Link>
-    <Link to="/now">Now</Link>
-    <Link to="/projects">Projects</Link>
-    <Link to="/reading">Reading</Link>
-  </NavigationArea>
-)
+const Navigation = ({ path }) => {
+  const navList = navPaths.map(nav => {
+    if (nav.path !== path) {
+      return (
+        <Link key={nav.name} to={nav.path}>
+          {nav.name}
+        </Link>
+      )
+    }
+  })
+  return <NavigationArea>{navList}</NavigationArea>
+}
 
 export default Navigation

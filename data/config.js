@@ -18,6 +18,32 @@ module.exports = {
   userTwitter: '', // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: 'North Pole, Earth', // User location to display in the author segment.
   userDescription: '', // Links to social profiles/projects you want to display in the author segment/navigation bar.
+  navPaths: [
+    {
+      name: 'Home',
+      path: '/',
+    },
+    {
+      name: 'Whoami',
+      path: '/whoami',
+    },
+    {
+      name: 'Blog',
+      path: '/blog',
+    },
+    {
+      name: 'Now',
+      path: '/now',
+    },
+    {
+      name: 'Projects',
+      path: '/projects',
+    },
+    {
+      name: 'Reading',
+      path: '/reading',
+    },
+  ],
   userLinks: [
     {
       label: 'GitHub',
