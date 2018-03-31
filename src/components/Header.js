@@ -1,11 +1,17 @@
 import React from 'react'
-import Backslash from '../styles/backslash'
+import { css } from 'emotion'
+import { noSelect } from '../styles/utils'
 
 const Header = ({ title }) => (
-  <div>
-    <p>/usr{title}</p>
-    <Backslash />
-  </div>
+  <span
+    className={css`
+      ${noSelect};
+      font-size: 20px;
+      grid-area: header;
+    `}
+  >
+    /usr{title} \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+  </span>
 )
 
 export default Header

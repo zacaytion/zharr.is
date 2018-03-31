@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import styled from 'react-emotion'
 import config from '../../data/config'
 // import globals from '../styles/global'
-import Border from '../components/Border'
+import Z from '../components/Border'
 import Header from '../components/Header'
 import Navigation from '../components/Nav'
 import Tilde from '../styles/tilde'
@@ -15,8 +15,16 @@ const Container = styled.div`
   min-height: 100vh;
   display: grid;
   grid-template-columns: 20px auto;
-  grid-template-rows: 50px 50px auto;
-  grid-gap: 10px;
+  grid-template-rows: 50px 30px auto;
+  grid-row-gap: 10px;
+  grid-column-gap: 20px;
+  grid-template-areas:
+    'logo navigation'
+    '. header'
+    'tilde content';
+`
+const Content = styled.div`
+  grid-area: content;
 `
 const TemplateWrapper = ({ location, children }) => (
   <Container>
@@ -24,12 +32,11 @@ const TemplateWrapper = ({ location, children }) => (
       title={config.siteDescription}
       meta={[{ name: 'description', content: config.siteDescription }]}
     />
-    <Border />
-    <Navigation />
-    <div />
+    <Z />
+    <Navigation path={location.pathname} />
     <Header title={location.pathname} />
     <Tilde />
-    <div>{children()}</div>
+    <Content>{children()}</Content>
   </Container>
 )
 

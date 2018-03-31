@@ -1,9 +1,9 @@
 import React from 'react'
+import styled from 'react-emotion'
 
-// Add Page title as Prop
-const Border = () => (
-  <div>
-    <h1>Ƶ</h1>
-  </div>
-)
-export default Border
+const Logo = styled.div`
+  grid-area: logo;
+  font-size: 36px;
+`
+const Z = () => <Logo>Ƶ</Logo>
+export default Z
