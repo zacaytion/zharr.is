@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import PostList from '../components/Post/List'
 import config from '../../data/config'
 
 export default ({ pathContext, data }) => {
@@ -8,6 +9,7 @@ export default ({ pathContext, data }) => {
   return (
     <div>
       <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
+      <PostList postEdges={postEdges} />
     </div>
   )
 }
