@@ -71,6 +71,7 @@ module.exports = {
         color: config.themeColor,
       },
     },
+    'gatsby-plugin-remove-trailing-slashes',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-catch-links',

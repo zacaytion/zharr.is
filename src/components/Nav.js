@@ -11,11 +11,11 @@ import Link from '../components/Link'
 
 const Navigation = () => (
   <div>
-    <Link to="/whoami/">Whoami</Link>
-    <Link to="/blog/">Blog</Link>
-    <Link to="/now/">Now</Link>
-    <Link to="/projects/">Projects</Link>
-    <Link to="/reading/">Reading</Link>
+    <Link to="/whoami">Whoami</Link>
+    <Link to="/blog">Blog</Link>
+    <Link to="/now">Now</Link>
+    <Link to="/projects">Projects</Link>
+    <Link to="/reading">Reading</Link>
   </div>
 )
 
