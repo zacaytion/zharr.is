@@ -4,15 +4,19 @@ import { noSelect } from './utils'
 
 // TODO: Create a Tilde with SVG
 const Tilde = () => (
-  <p
+  <span
     className={css`
       ${noSelect};
-      font-size: 22px;
+      font-size: 3em;
       grid-area: tilde;
+      overflow: hidden;
+      min-height: 0;
+      min-width: 0;
+      max-height: 80vh;
     `}
   >
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  </p>
+  </span>
 )
 
 export default Tilde
