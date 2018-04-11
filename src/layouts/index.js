@@ -10,7 +10,7 @@ import Navigation from '../components/Nav'
 import Tilde from '../styles/tilde'
 
 const Container = styled.div`
-  max-width: 1200px;
+  max-width: 100vw;
   max-height: 110vh;
 `
 
@@ -32,6 +32,8 @@ const Grid = styled.div`
 const Content = styled.div`
   grid-area: content;
 `
+
+ 
 const TemplateWrapper = ({ location, children }) => (
   <Container>
     <Helmet
