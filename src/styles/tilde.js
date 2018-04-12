@@ -7,12 +7,12 @@ const Tilde = () => (
   <span
     className={css`
       ${noSelect};
-      font-size: 3em;
+      font-size: 2.5rem;
       grid-area: tilde;
       overflow: hidden;
       min-height: 0;
       min-width: 0;
-      max-height: 80vh;
+      max-height: 86vh;
     `}
   >
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

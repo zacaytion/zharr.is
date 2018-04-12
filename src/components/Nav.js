@@ -11,13 +11,15 @@ const { navPaths } = config
 const NavigationArea = styled.div`
   grid-area: navigation;
   justify-self: end;
-  align-self: center;
+  align-self: end;
   display: flex;
   flex-direction: row;
+  padding-right: 4rem; 
 `
 const NavLinks = css`
-  padding: 0 10px;
-  font-size: 2rem;
+  padding: 0 10px; 
+  font-size: 1.25rem;
+
 `
 const Navigation = ({ path }) => {
   const navList = navPaths.map(nav => {

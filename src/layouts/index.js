@@ -10,18 +10,16 @@ import Navigation from '../components/Nav'
 import Tilde from '../styles/tilde'
 
 const Container = styled.div`
-  max-width: 100vw;
-  max-height: 110vh;
+  max-width: 1200px;
+  max-height: 98vh;
+  overflow-x: hidden;
+  padding: 10px 10px; 
 `
 
 const Grid = styled.div`
-  margin-top: 20px;
-  margin-left: 20px;
-  min-height: 0;
-  min-width: 0;
   display: grid;
-  grid-template-columns: 5% auto;
-  grid-template-rows: 20% 10% auto;
+  grid-template-columns: 3% 97%;
+  grid-template-rows: 15% 10% auto;
   grid-row-gap: 10px;
   grid-column-gap: 20px;
   grid-template-areas:
@@ -31,6 +29,12 @@ const Grid = styled.div`
 `
 const Content = styled.div`
   grid-area: content;
+  padding-right: 20px;
+  padding-left: 5px;
+  max-height: 71vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
 `
 
  
