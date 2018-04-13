@@ -32,7 +32,7 @@ class Header extends React.Component {
         const { width } = this.state
         const trimTitle = title === '/' ? '' : title
         const locationString = `/usr${trimTitle} `
-        const max = width / 18.46 
+        const max = width >= 1200 ? 85 : (width/14)
         const padding = max - locationString.length
         const backslash = Array(parseInt(padding)).join('\\')
         const headerString = `${locationString}${backslash}`
@@ -40,7 +40,7 @@ class Header extends React.Component {
             <span
               className={css`
                 ${noSelect};
-                font-size: 2rem;
+                font-size: 1.5rem;
                 grid-area: header;
                 overflow: hidden;
                 min-width: 0;
