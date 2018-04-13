@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'react-emotion'
 import { css } from 'emotion'
-import config from '../../data/config'
+import config from '../../content/config'
 import Link from '../components/Link'
 
 const { navPaths } = config

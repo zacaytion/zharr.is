@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from 'emotion'
-import { noSelect } from './utils'
+import { noSelect } from '../styles/utils'
 
 // TODO: Create a Tilde with SVG
 const Tilde = () => (

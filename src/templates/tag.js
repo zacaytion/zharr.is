@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import PostList from '../components/Post/List'
-import config from '../../data/config'
+import config from '../../content/config'
 
 export default ({ pathContext, data }) => {
   const { tag } = pathContext

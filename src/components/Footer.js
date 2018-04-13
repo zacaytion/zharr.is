@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'react-emotion'
-import config from '../../data/config'
+import config from '../../content/config'
 
 const Div = styled.footer`
-  position: absolute;
-  right: 0;
-  bottom: -35px;
-  left: 0;
+  margin-top: 2.5rem;
   text-align: center;
+    p {
+      margin-bottom: 0 !important;
+    }
 `
 const Footer = () => (
     <Div>
