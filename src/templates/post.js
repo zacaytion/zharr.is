@@ -1,10 +1,10 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import styled from 'react-emotion'
 import SEO from '../components/SEO'
 import config from '../../content/config'
 import PostCategory from '../components/Post/Category'
 import PostTags from '../components/Post/Tags'
-import styled from 'react-emotion'
 
 const Div = styled.div`
   padding: 0 15px;

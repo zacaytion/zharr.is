@@ -1,113 +1,128 @@
+/* eslint-disable no-case-declarations, no-useless-escape */
 const path = require('path')
 const _ = require('lodash')
 const webpackLodashPlugin = require('lodash-webpack-plugin')
 
+// Parse date information out of blog post filename.
+const BLOG_POST_FILENAME_REGEX = /([0-9]+)\-([0-9]+)\-([0-9]+)\-(.+)/
+
 exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   const { createNodeField } = boundActionCreators
-  let slug
-  if (node.internal.type === 'MarkdownRemark') {
-    const fileNode = getNode(node.parent)
-    const parsedFilePath = path.parse(fileNode.relativePath)
-    if (
-      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
-    ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`
-    } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
-      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`
-    } else if (parsedFilePath.dir === '') {
-      slug = `/${parsedFilePath.name}/`
-    } else {
-      slug = `/${parsedFilePath.dir}/`
+
+  switch (node.internal.type) {
+    case 'MarkdownRemark':
+    const parentNode = getNode(node.parent)
+    const { sourceInstanceName, name } = parentNode
+    let slug
+    switch (sourceInstanceName) {
+      case 'blog':
+      const match = BLOG_POST_FILENAME_REGEX.exec(name)
+      const filename = match[4]
+      slug = `/${sourceInstanceName}/${filename}`
+      break
+      case '':
+      slug = `${name}`
+      break
+      default:
+      slug = `${sourceInstanceName}/${name}`
     }
-    if (
-      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug')
-    ) {
-      slug = `/${_.kebabCase(node.frontmatter.slug)}`
-    }
-    createNodeField({ node, name: 'slug', value: slug })
+    createNodeField({
+      node,
+      name: 'slug',
+      value: slug,
+    })
+    break
+  default:
+    break
   }
 }
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
+exports.createPages = async ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
 
-  return new Promise((resolve, reject) => {
-    const postPage = path.resolve('src/templates/post.js')
-    const tagPage = path.resolve('src/templates/tag.js')
-    const categoryPage = path.resolve('src/templates/category.js')
-    resolve(
-      graphql(
-        `
-          {
-            allMarkdownRemark {
-              edges {
-                node {
-                  frontmatter {
-                    tags
-                    category
-                  }
-                  fields {
-                    slug
-                  }
+  const postTemplate = path.resolve('src/templates/post.js')
+  const tagTemplate = path.resolve('src/templates/tag.js')
+  const categoryTemplate = path.resolve('src/templates/category.js')
+  const projectTemplate = path.resolve('src/templates/project.js')
+  const readingTemplate = path.resolve('src/templates/reading.js')
+  const allMarkdown = await graphql(
+      `
+        {
+          allMarkdownRemark {
+            edges {
+              node {
+                frontmatter {
+                  tags
+                  category
+                }
+                fields {
+                  slug
                 }
               }
             }
           }
-        `
-      ).then(result => {
-        if (result.errors) {
-          /* eslint no-console: "off" */
-          console.log(result.errors)
-          reject(result.errors)
         }
+      `
+  )
 
-        const tagSet = new Set()
-        const categorySet = new Set()
-        result.data.allMarkdownRemark.edges.forEach(edge => {
-          if (edge.node.frontmatter.tags) {
-            edge.node.frontmatter.tags.forEach(tag => {
-              tagSet.add(tag)
-            })
-          }
+  if (allMarkdown.errors) {
+    /* eslint no-console: "off" */
+    console.error(allMarkdown.errors)
+    throw Error(allMarkdown.errors)
+  }
 
-          if (edge.node.frontmatter.category) {
-            categorySet.add(edge.node.frontmatter.category)
-          }
+  const tagSet = new Set()
+  const categorySet = new Set()
 
-          createPage({
-            path: `/blog${edge.node.fields.slug}`,
-            component: postPage,
-            context: {
-              slug: edge.node.fields.slug,
-            },
-          })
-        })
-
-        const tagList = Array.from(tagSet)
-        tagList.forEach(tag => {
-          createPage({
-            path: `/tags/${_.kebabCase(tag)}/`,
-            component: tagPage,
-            context: {
-              tag,
-            },
-          })
-        })
-
-        const categoryList = Array.from(categorySet)
-        categoryList.forEach(category => {
-          createPage({
-            path: `/categories/${_.kebabCase(category)}/`,
-            component: categoryPage,
-            context: {
-              category,
-            },
-          })
-        })
+  allMarkdown.data.allMarkdownRemark.edges.forEach(edge => {
+    const { slug } = edge.node.fields
+    let template
+    if (edge.node.frontmatter.tags) {
+      edge.node.frontmatter.tags.forEach(tag => {
+        tagSet.add(tag)
       })
-    )
+    }
+
+    if (edge.node.frontmatter.category) {
+      categorySet.add(edge.node.frontmatter.category)
+    }
+
+    if (slug.includes('blog/')) {
+      template = postTemplate
+    } else if (slug.includes('projects/')) {
+      template = projectTemplate
+    } else if (slug.includes('readings/')) {
+      template = readingTemplate
+    }
+    createPage({
+      path: slug,
+      component: template,
+      context: {
+        slug,
+      },
+    })
+  })
+
+  const tagList = Array.from(tagSet)
+  tagList.forEach(tag => {
+    createPage({
+      path: `/tags/${_.kebabCase(tag)}/`,
+      component: tagTemplate,
+      context: {
+        tag,
+      },
+    })
+  })
+
+  const categoryList = Array.from(categorySet)
+  categoryList.forEach(category => {
+    createPage({
+      path: `/categories/${_.kebabCase(category)}/`,
+      component: categoryTemplate,
+      context: {
+        category,
+      },
+    })
   })
 }
 
@@ -116,3 +131,4 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     config.plugin('Lodash', webpackLodashPlugin, null)
   }
 }
+ 

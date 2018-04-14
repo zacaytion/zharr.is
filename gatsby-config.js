@@ -23,8 +23,22 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'posts',
+        name: 'blog',
         path: `${__dirname}/content/${config.blogPostDir}`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'projects',
+        path: `${__dirname}/content/${config.projectsDir}`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'reading',
+        path: `${__dirname}/content/${config.readingDir}`,
       },
     },
     {
