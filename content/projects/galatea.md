@@ -1,10 +1,11 @@
 ---
-title: Galatea Design
-slug: Galatea
-order: 4
+title: "Galatea Design"
+slug: "Galateas"
+order: "4"
+date: "2017"
 ---
 
 # Galatea Design Inc.
 
-Testingnf
+Testing
 

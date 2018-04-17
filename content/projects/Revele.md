@@ -1,7 +1,8 @@
 ---
-title: Revele
-slug: Revele
-order: 1
+title: "Revele"
+slug: "Revele"
+order: "1"
+date: "2017"
 ----
 
 # REVELE

@@ -21,7 +21,7 @@ module.exports = {
   userDescription: '', // Links to social profiles/projects you want to display in the author segment/navigation bar.
   navPaths: [
     {
-      name: 'Home',
+      name: 'Root',
       path: '/',
     },
     {

@@ -1,7 +1,8 @@
 ---
-title: Chicago Leadership Alliance
-slug: CLA
-order: 2
+title: "Chicago Leadership Alliance"
+slug: "CLA"
+order: "2"
+date: "2017" 
 ---
 
 # CLA
