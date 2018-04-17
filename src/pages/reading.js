@@ -1,14 +1,14 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import BookList from '../components/Books/List'
 
 const Readings = props => {
-    const bookEdges = props.data.allMarkdownRemark.edges
+    const { inProgress, finished } = props.data
     return (
       <div>
-        <h1>Readings</h1>
-        <Link to="/">Go back to the homepage</Link>
-        <BookList bookEdges={bookEdges} />
+        <h1>Currently Reading</h1>
+        <BookList bookEdges={inProgress.edges} />
+        <h1>Finished Reading</h1>
+        <BookList bookEdges={finished.edges} />
       </div>
     )
 }
@@ -16,27 +16,55 @@ const Readings = props => {
 
 export default Readings
 
-// TODO: Sort by current vs read
-
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query ReadingQuery {
-     allMarkdownRemark(
-        filter: {id: {regex: "//readings//"}}
-        sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-        edges {
-            node {
-                fields {
-                    slug
+    query ReadingQuery {
+        inProgress:
+        allMarkdownRemark(
+            filter: {
+                id: {regex: "//readings//"},
+                frontmatter: {inProgress: {eq: "t"}
                 }
-                frontmatter {
-                    title
-                    cover
-                    date
+            },
+            sort: {
+                fields: [frontmatter___date],
+                order: DESC
+            }) {
+            edges {
+                node {
+                    fields {
+                        slug
+                    }
+                    frontmatter {
+                        title
+                        cover
+                        date
+                    }
+                }
+            }
+        }
+        finished:
+        allMarkdownRemark(
+            filter: {
+                id: {regex: "//readings//"},
+                frontmatter: {inProgress: {ne: "t"}}},
+            sort: {
+                fields: [frontmatter___date],
+                order: DESC
+            }) {
+            edges {
+                node {
+                    fields {
+                        slug
+                    }
+                    frontmatter {
+                        title
+                        cover
+                        date
+                    }
                 }
             }
         }
     }
-}
+
 `
