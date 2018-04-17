@@ -41,22 +41,21 @@ const Content = styled.div`
 
 
 const TemplateWrapper = ({ location, children }) => (
-    <Container>
-        <Helmet
-            title={config.siteDescription}
-            meta={[{ name: 'description', content: config.siteDescription }]}
-        />
-        <Grid>
-            <Z />
-            <Navigation path={location.pathname} />
-            <Header title={location.pathname} />
-            <Tilde />
-            <Content>
-                {children()}
-                <Footer/>
-            </Content>
-        </Grid>
-    </Container>
+  <Container>
+    <Helmet
+      title={config.siteDescription}
+      meta={[{ name: 'description', content: config.siteDescription }]}
+    />
+    <Grid>
+      <Z />
+      <Navigation path={location.pathname} />
+      <Header title={location.pathname} />
+      <Tilde />
+      <Content>
+        {children()}
+      </Content>
+    </Grid>
+  </Container>
 )
 
 TemplateWrapper.propTypes = {
