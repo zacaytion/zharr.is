@@ -42,6 +42,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/content/${config.imagesDir}`,
+      },
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
@@ -72,6 +79,13 @@ module.exports = {
           {
             resolve: 'gatsby-remark-responsive-iframe',
           },
+          {
+            resolve: 'gatsby-remark-relative-images',
+            options: {
+              name: 'images',
+            }
+          },
+          'gatsby-remark-copy-images',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-autolink-headers',
           'gatsby-remark-smartypants',

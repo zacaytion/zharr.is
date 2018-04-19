@@ -6,6 +6,7 @@ module.exports = {
   blogPostDir: 'blog', // The name of directory that contains your posts.
   projectsDir: 'projects',
   readingDir: 'readings',
+  imagesDir: 'images',
   siteTitle: 'Hello World!', // Site title.
   siteTitleAlt: 'Zach Harris', // Alternative site title for SEO.
   siteLogo: '/logos/logo-1024.png', // Logo used for SEO and manifest.
