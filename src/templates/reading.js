@@ -21,7 +21,9 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        cover
+        cover {
+          publicURL
+        }
         date
       }
       fields {
