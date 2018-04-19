@@ -13,7 +13,7 @@ const Bio = styled.div`
   grid-area: bio;
   display: grid;
   padding-right: 3em;
-  grid-template-rows: 4em auto;
+  grid-template-rows: 3em auto;
 `
 const Contact = styled.div`
   grid-area: contact;
