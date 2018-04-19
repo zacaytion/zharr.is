@@ -5,9 +5,9 @@ const Readings = props => {
     const { inProgress, finished } = props.data
     return (
       <div>
-        <h1>Currently Reading</h1>
-        <BookList bookEdges={inProgress.edges} />
-        <h1>Finished Reading</h1>
+        <h2>Currently Reading</h2>
+        <BookList inProgress bookEdges={inProgress.edges} />
+        <h2>Finished</h2>
         <BookList bookEdges={finished.edges} />
       </div>
     )
@@ -37,7 +37,11 @@ export const pageQuery = graphql`
                     }
                     frontmatter {
                         title
-                        cover
+                        cover {
+                          publicURL
+                        }
+                        inProgress
+                        author
                         date
                     }
                 }
@@ -59,7 +63,11 @@ export const pageQuery = graphql`
                     }
                     frontmatter {
                         title
-                        cover
+                        cover {
+                          publicURL
+                        }
+                        inProgress
+                        author
                         date
                     }
                 }
