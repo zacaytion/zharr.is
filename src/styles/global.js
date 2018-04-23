@@ -5,11 +5,7 @@ injectGlobal`
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
   }
-  body {
-    font-family: "Space Mono,
-    "sans-serif";
-  }
-  
+  {
   *::-webkit-scrollbar {
     width: 6px;
   }
@@ -21,5 +17,8 @@ injectGlobal`
   }
   [data-whatintent="mouse"] *:focus {
     outline: none;
+  }
+  a {
+    color: #ff2c6d;
   }
 `

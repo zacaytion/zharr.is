@@ -41,7 +41,7 @@ export default ({ postEdges }) => {
           </div>
           <Nav>
             <Link to={post.path}>
-              Read More >>>
+              Read More +++
             </Link>
           </Nav>
         </Article>
