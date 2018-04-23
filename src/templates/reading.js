@@ -1,5 +1,9 @@
 import React from 'react'
+import styled from 'react-emotion'
 
+const Div = styled.div`
+  padding: 1em 5em 0;
+`
 export default ({ pathContext, data}) => {
   const { slug } = pathContext
   const bookNode = data.markdownRemark
@@ -7,10 +11,10 @@ export default ({ pathContext, data}) => {
   book.id = book.id || slug
 
   return (
-    <div>
+    <Div>
       <h1>{book.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: bookNode.html }} />
-    </div>
+    </Div>
   )
 }
 

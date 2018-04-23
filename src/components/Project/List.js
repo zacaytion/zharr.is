@@ -13,7 +13,7 @@ export default ({ projectEdges }) => {
     <div>
       {projectList.map(project => (
         <Link to={project.path} key={project.title}>
-          <h1>{project.title}</h1>
+          <h3>{project.title}</h3>
         </Link>
       ))}
     </div>

@@ -7,7 +7,7 @@ import PostCategory from '../components/Post/Category'
 import PostTags from '../components/Post/Tags'
 
 const Div = styled.div`
-  padding: 0 15px;
+  padding: 1em 5em 0;
 `
 export default ({ pathContext, data }) => {
   const { slug } = pathContext
@@ -23,9 +23,9 @@ export default ({ pathContext, data }) => {
       </Helmet>
       <SEO postPath={slug} postNode={postNode} postSEO />
         <h1>{post.title}</h1>
-        <PostCategory category={post.category} />
         <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
         <div className="post-meta">
+          <PostCategory category={post.category} />
           <PostTags tags={post.tags} />
         </div>
     </Div>

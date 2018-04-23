@@ -40,7 +40,7 @@ class Header extends React.Component {
             <span
               className={css`
                 ${noSelect};
-                font-size: 1.5rem;
+                font-size: 1.4rem;
                 grid-area: header;
                 overflow: hidden;
                 min-width: 0;

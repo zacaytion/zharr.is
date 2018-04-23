@@ -1,13 +1,11 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import ProjectList from '../components/Project/List'
 
 const Projects = props => {
     const projectEdges = props.data.allMarkdownRemark.edges
     return (
       <div>
-        <h1>Projects</h1>
-        <Link to="/">Go back to the homepage</Link>
+        <h2>Projects</h2>
         <ProjectList projectEdges={projectEdges} />
       </div>
     )
@@ -28,7 +26,6 @@ export const pageQuery = graphql`
                     }
                     frontmatter {
                         title
-                        cover
                         date
                         order
                     }

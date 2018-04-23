@@ -1,5 +1,9 @@
 import React from 'react'
+import styled from 'react-emotion'
 
+const Div = styled.div`
+  padding: 1em 5em 0;
+`
 export default ({ pathContext, data}) => {
   const { slug } = pathContext
   const projectNode = data.markdownRemark
@@ -7,10 +11,10 @@ export default ({ pathContext, data}) => {
   project.id = project.id || slug
 
   return (
-    <div>
+    <Div>
       <h1>{project.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: projectNode.html }} />
-    </div>
+    </Div>
   )
 }
 
@@ -21,7 +25,9 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        cover
+        cover {
+          publicURL
+        }
         date
       }
       fields {

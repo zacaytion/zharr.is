@@ -9,8 +9,7 @@ const BLOG_POST_FILENAME_REGEX = /([0-9]+)\-([0-9]+)\-([0-9]+)\-(.+)/
 exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   const { createNodeField } = boundActionCreators
 
-  switch (node.internal.type) {
-    case 'MarkdownRemark':
+  if( node.internal.type ==='MarkdownRemark' ) {
     const parentNode = getNode(node.parent)
     const { sourceInstanceName, name } = parentNode
     let slug
@@ -31,9 +30,6 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       name: 'slug',
       value: slug,
     })
-    break
-  default:
-    break
   }
 }
 

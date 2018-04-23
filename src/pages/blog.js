@@ -1,15 +1,17 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import styled from 'react-emotion'
 import PostList from '../components/Post/List'
 
+const Div = styled.div`
+  padding: 1em 5em 0;
+`
 const Blog = props => {
   const postEdges = props.data.allMarkdownRemark.edges
   return (
-    <div>
+    <Div>
       <h1>Blog</h1>
-      <Link to="/">Go back to the homepage</Link>
       <PostList postEdges={postEdges} />
-    </div>
+    </Div>
   )
 }
 export default Blog
@@ -31,9 +33,7 @@ export const pageQuery = graphql`
                     frontmatter {
                         title
                         tags
-                        cover {
-                          publicURL
-                        }
+                        category
                         date
                     }
                 }
