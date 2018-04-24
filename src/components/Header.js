@@ -35,7 +35,7 @@ class Header extends React.Component {
       const { width } = this.state
       const trimTitle = title === '/' ? '' : title
       const locationString = `/usr${trimTitle} `
-      const max = width >= 1200 ? 85 : (width/15)
+      const max = width >= 1200 ? 85 : (width/13)
       const padding = max - locationString.length
       const backslash = '\\'.repeat(parseInt(padding))
       const headerString = `${locationString}${backslash}`
