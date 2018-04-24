@@ -1,7 +1,13 @@
 {
-  "presets": ["es2015", "react"],
-  "plugins": [
-    "syntax-object-rest-spread",
-    "transform-object-rest-spread"
-  ]
+  "presets": ["env", "react"],
+  "env": {
+    "production": {
+      "plugins": [["emotion", { "hoist": true }]]
+    },
+    "development": {
+      "plugins": [
+        ["emotion", { "sourceMap": true, "autoLabel": true }]
+      ]
+    }
+  }
 }

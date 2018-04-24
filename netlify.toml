@@ -1,12 +1,7 @@
 [build]
   command = "npm run build"
-  publish = "dist"
+  publish = "public"
 
-[context.production.environment]
-  HUGO_VERSION = "0.27"
-
-[context.deploy-preview.environment]
-  HUGO_VERSION = "0.27"
-
-[context.deploy-preview]
-  command = "npm run build-preview"
+[build.environment]
+  YARN_VERSION = "1.6"
+  YARN_FLAGS = "--no-ignore-optional"
