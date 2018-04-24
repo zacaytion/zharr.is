@@ -197,7 +197,9 @@ module.exports = {
                     fields { slug }
                     frontmatter {
                       title
-                      cover
+                      cover {
+                        publicURL
+                      }
                       date
                       category
                       tags
