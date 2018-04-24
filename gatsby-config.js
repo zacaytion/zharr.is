@@ -104,12 +104,12 @@ module.exports = {
         trackingId: config.googleAnalyticsID,
       },
     },
-    {
-      resolve: 'gatsby-plugin-nprogress',
-      options: {
-        color: config.themeColor,
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-nprogress',
+    //   options: {
+    //     color: config.themeColor,
+    //   },
+    // },
     'gatsby-plugin-remove-trailing-slashes',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
