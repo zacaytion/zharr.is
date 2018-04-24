@@ -7,7 +7,7 @@ import globals from '../styles/global' // eslint-ignore-line no-unused-vars
 import Z from '../components/Z'
 import Header from '../components/Header'
 import Navigation from '../components/Nav'
-import Tilde from '../components/tilde'
+import Tilde from '../components/Tilde'
 
 require("prismjs/themes/prism-tomorrow.css")
 
