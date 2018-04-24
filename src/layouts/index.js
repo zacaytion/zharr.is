@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import styled from 'react-emotion'
 import config from '../../content/config'
-import globals from '../styles/global' // eslint-ignore-line no-unused-vars
 import Z from '../components/Z'
 import Header from '../components/Header'
 import Navigation from '../components/Nav'
@@ -15,8 +14,12 @@ const Container = styled.div`
     max-width: 1200px;
     max-height: 105vh;
     overflow-x: hidden;
-    padding: 10px 10px; 
+    padding: 10px 10px;
+    a {
+      color: #ff2c6d;
+    }
 `
+
 
 const Grid = styled.div`
     display: grid;
