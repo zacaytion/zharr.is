@@ -11,8 +11,8 @@ module.exports = {
       feed_url: config.siteUrl + pathPrefix + config.siteRss,
       title: config.siteTitle,
       description: config.siteDescription,
-      image_url: `${config.siteUrl + pathPrefix}/logos/logo-512.png`,
-      author: config.userName,
+      image_url: `${config.siteUrl + pathPrefix}/images/logos/logo-512.png`,
+      authnextor: config.userName,
       copyright: config.copyright,
     },
   },
@@ -20,6 +20,7 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -104,42 +105,41 @@ module.exports = {
         trackingId: config.googleAnalyticsID,
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-nprogress',
-    //   options: {
-    //     color: config.themeColor,
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        color: config.themeColor,
+      },
+    },
     'gatsby-plugin-remove-trailing-slashes',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
-    // {
-    //   resolve: 'gatsby-plugin-manifest',
-    //   options: {
-    //     name: config.siteTitle,
-    //     short_name: config.siteTitle,
-    //     description: config.siteDescription,
-    //     start_url: config.pathPrefix,
-    //     background_color: config.backgroundColor,
-    //     theme_color: config.themeColor,
-    //     display: 'minimal-ui',
-    //     icons: [
-    //       {
-    //         src: '/logos/logo-192x192.png',
-    //         sizes: '192x192',
-    //         type: 'image/png',
-    //       },
-    //       {
-    //         src: '/logos/logo-512x512.png',
-    //         sizes: '512x512',
-    //         type: 'image/png',
-    //       },
-    //     ],
-    //   },
-    // }
-    //,
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: config.siteTitle,
+        short_name: config.siteTitle,
+        description: config.siteDescription,
+        start_url: config.pathPrefix,
+        background_color: config.backgroundColor,
+        theme_color: config.themeColor,
+        display: 'minimal-ui',
+        icons: [
+          {
+            src: 'images/logos/logo-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: 'images/logos/logo-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
+      },
+    },
     'gatsby-plugin-netlify',
   ],
 }
