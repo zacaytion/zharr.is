@@ -42,8 +42,10 @@
     "lodash-webpack-plugin": "^0.11.4",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
+    "react-dom": "^16.3.2",
     "react-emotion": "^9.0.2",
     "react-helmet": "^5.2.0",
+    "serve": "^6.5.6",
     "typography": "^0.16.6"
   },
   "keywords": [
@@ -54,6 +56,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "start": "serve public/",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "lint:md": "remark content/posts/",
     "test": "echo \"Error: no test specified\" && exit 1"
