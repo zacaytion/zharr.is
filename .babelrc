@@ -1,5 +1,8 @@
 {
-  "presets": ["env", "react"],
+  "presets": [
+    "@babel/env",
+    "@babel/react",
+  ],
   "env": {
     "production": {
       "plugins": [["emotion", { "hoist": true }]]
