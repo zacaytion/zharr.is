@@ -4,7 +4,7 @@ title = "zharr.is"
 author = "Zach Harris"
 copyright = "Zach Harris"
 
-theme = "cactus"
+theme = "hugo-theme-cactus"
 enableEmoji = true
 enableGitInfo = true
 
@@ -12,10 +12,10 @@ disableFastRender = true        # Hugo 0.30
 
 pygmentsUseClasses = true       # This applies to Chroma too.
 
-[module]
-  [[module.imports]]
-    disable = true
-    path = "github.com/kaushalmodi/hugo-bare-min-theme"
+# [module]
+#   [[module.imports]]
+#     disable = true
+#     path = "github.com/kaushalmodi/hugo-bare-min-theme"
 
 [[menu.main]]
 name = "Home"
