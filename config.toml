@@ -1,37 +1,104 @@
-baseurl = "https://example.com"
-title = "Hugo Bare Min Theme"
+baseurl = "https://zharr.is"
+languageCode = "en-us"
+title = "zharr.is"
 author = "Zach Harris"
+copyright = "Zach Harris"
 
+theme = "cactus"
 enableEmoji = true
 enableGitInfo = true
 
 disableFastRender = true        # Hugo 0.30
 
-pygmentsCodeFences = true       # This applies to Chroma too.
 pygmentsUseClasses = true       # This applies to Chroma too.
 
 [module]
   [[module.imports]]
+    disable = true
     path = "github.com/kaushalmodi/hugo-bare-min-theme"
 
-[Author]
-  name = "Zach Harris"
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
 
-[Social]
-  github = "zacaytion"
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 2
 
-[Params]
-  description = "Example site for the Hugo Bare Min theme."
-  intro = """
-This is an Example Site for the <a href="https://github.com/kaushalmodi/hugo-bare-min-theme">
-<code>hugo-bare-min-theme</code></a>.
-"""
-  footer = """
-  [<a href="/">Test Site home</a>]
-"""
-  # Note: It is *mandatory* to set "url" below if you want to set
-  # "md_dir" or "org_dir".
-  [Params.source]
-    url = "https://github.com/kaushalmodi/hugo-bare-min-theme" # Needed if you want to see .GitInfo for a page
-    md_dir = "exampleSite/content"                             # Needed if you want to get a link to Markdown source for each page
-    # org_dir = "exampleSite/content-org"                        # Needed if you want to get a link to the Org source (e.g. when using ox-hugo!)
+# [[menu.main]]
+# name = "Tags"
+# url = "/tags"
+# weight = 3
+
+# [[menu.main]]
+# name = "About"
+# url = "/about"
+# weight = 4
+
+[params]
+  colortheme = "white"
+  description = "Zach Harris is a polygot software engineer with an insatiable curiosity."
+  mainSection = "posts"
+  # mainSectionTitle = "Blog"
+  showAllPostsOnHomePage = false
+  postsOnHomePage = 1
+  tagsOverview = false
+  tocInline = true
+  # showProjectsList = true
+  # projectsUrl = "https://github.com/zacaytion"
+
+  # https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
+  dateFormat = "2006-01-02" # default
+
+  # Post page settings
+  show_updated = true # default
+  showReadTime = true # default
+
+[[params.social]]
+  name = "github"
+  link = "https://github.com/zacaytion"
+
+[[params.social]]
+  name = "email"
+  link = "info@zharr.is" # no need for "mailto:" at the start
+
+[[params.social]]
+  name = "linkedin"
+  link = "https://www.linkedin.com/in/z-a-h/"
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 2
+
+## Settings from Bare Min Theme
+# [Author]
+#   name = "Zach Harris"
+
+# [Social]
+#   github = "zacaytion"
+
+# [Params]
+#   description = "Example site for the Hugo Bare Min theme."
+#   intro = """
+# This is an Example Site for the <a href="https://github.com/kaushalmodi/hugo-bare-min-theme">
+# <code>hugo-bare-min-theme</code></a>.
+# """
+#   footer = """
+#   [<a href="/">Test Site home</a>]
+# """
+#   # Note: It is *mandatory* to set "url" below if you want to set
+#   # "md_dir" or "org_dir".
+#   [Params.source]
+#     url = "https://github.com/kaushalmodi/hugo-bare-min-theme" # Needed if you want to see .GitInfo for a page
+#     md_dir = "exampleSite/content"                             # Needed if you want to get a link to Markdown source for each page
+#     # org_dir = "exampleSite/content-org"                        # Needed if you want to get a link to the Org source (e.g. when using ox-hugo!)

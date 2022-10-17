@@ -3,7 +3,7 @@ title = "(Hu)go Template Primer"
 date = 2014-04-02
 tags = ["go", "golang", "development", "templates", "themes"]
 categories = ["Development", "golang"]
-draft = false
+draft = true
 [menu.main]
   weight = 2002
   identifier = "hu--go-template-primer"

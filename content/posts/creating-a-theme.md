@@ -2,7 +2,7 @@
 title = "Creating a New Theme"
 date = 2014-09-28
 linkTitle = "Creating a New Theme"
-draft = false
+draft = true
 [menu.main]
   weight = 2003
   identifier = "creating-a-new-theme"
