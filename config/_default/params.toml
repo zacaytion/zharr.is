@@ -1,0 +1,64 @@
+# Meta Data for SEO
+
+## Homepage
+title = "Zach Harris"
+titleSeparator = "-"
+titleAddition = "ZAH Website"
+description = "The personal website of Zach Harris"
+
+## Open Graph
+# images = ["hyas.png"]
+ogLocale = "en_US"
+titleHome = "Zach Harris"
+
+## Twitter Cards
+twitterSite = "@zacaytion"
+# twitterCreator = ""
+
+## JSON-LD
+schemaType = "Person"
+schemaName = "zharr.is"
+schemaAuthor = "Zach Harris"
+schemaLocale = "en-US"
+# schemaLogo = "logo-hyas.png"
+# schemaLogoWidth = 512
+# schemaLogoHeight = 512
+# schemaImage = "hyas.png"
+# schemaImageWidth = 1280
+# schemaImageHeight = 640
+schemaTwitter = "https://twitter.com/zacaytion"
+schemaLinkedIn = "https://www.linkedin.com/in/z-a-h/"
+schemaGitHub = "https://github.com/zacaytion"
+
+## Chrome Browser
+themeColor = "#fff"
+
+# Images - Temporarily left in place for backward compatibility
+quality = 85
+bgColor = "#fff"
+landscapePhotoWidths = [900, 800, 700, 600, 500]
+portraitPhotoWidths = [800, 700, 600, 500]
+lqipWidth = "20x"
+smallLimit = "320"
+
+# Images
+imageResponsive = true
+imageConvertTo = "webp"
+imageImageSizes = ["480","720","1080","1280","1600","2048"]
+singleSize = false
+imageAddClass = "img-fluid lazyload blur-up"
+
+### Image template
+defaultImage = "default-image.png" # put in `./assets/images/`
+fillImage = "1280x720 Center" # normalize image size
+
+# Footer
+footer = ""
+
+# Feed
+copyRight = "Copyright (c) 2022 Zach Harris"
+
+# Alert
+alert = false
+alertDismissable = true
+alertText = ""
