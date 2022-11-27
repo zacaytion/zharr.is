@@ -13,11 +13,11 @@ It's a work in progress, currently being rebuilt and redesigned with Hugo.
 
 #### Hugo Bare Min
 
-[https://themes.gohugo.io/themes/hugo-bare-min-theme/](source)
+[source](https://themes.gohugo.io/themes/hugo-bare-min-theme/)
 
 #### No Style Please
 
-https://themes.gohugo.io/themes/hugo-theme-nostyleplease/
+[source](https://themes.gohugo.io/themes/hugo-theme-nostyleplease/)
 
 #### Terminal
 
@@ -25,7 +25,7 @@ https://themes.gohugo.io/themes/hugo-theme-terminal/
 
 #### Accessible Minimalism
 
-[https://themes.gohugo.io/themes/accessible-minimalism-hugo-theme/](source)
+[source](https://themes.gohugo.io/themes/accessible-minimalism-hugo-theme/)
 
 #### Tufte
 
@@ -33,8 +33,8 @@ https://themes.gohugo.io/themes/hugo-tufte/
 
 #### Hylas
 
-- [https://github.com/h-enk/hyas](repo)
-
+- [https://github.com/h-enk/hyas](https://github.com/h-enk/hyas)
+     
 ### Other Sites
 
 #### Andrew Zah
@@ -95,3 +95,23 @@ This has the most examples, but the libary has been stale since 2020.
 - [https://www.npmjs.com/package/hugo-lunr](hugo-lunar npm package)
 - [https://lunrjs.com/](lunar.js site)
 - [https://gist.github.com/sebz/efddfc8fdcb6b480f567](gist using lunar.js with hugo and grunt)
+
+## TODO
+
+- [x] Scaffold Styles
+  - [File structure](https://matthewelsom.com/blog/simple-scss-playbook.html#file-structure)
+- [ ] Create 404 page
+- [ ] Create robots.txt
+- [ ] Headers
+- [ ] Redirects
+- [ ] About Page
+- [ ] Projects Index
+- [ ] Writing Index
+- [ ] A11y Check
+- [ ] Webmentions
+- [ ] Code Syntax Highlighting
+  - [Select color](https://xyproto.github.io/splash/docs/all.html)
+- [ ] MathJax
+  - [ ] Add font
+  - [ ] Configure a11y
+- [ ] Search

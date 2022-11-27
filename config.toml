@@ -4,12 +4,12 @@ title = "zharr.is"
 author = "Zach Harris"
 copyright = "Zach Harris"
 
-theme = "hugo-theme-cactus"
 enableEmoji = true
 enableGitInfo = true
 
-disableFastRender = true        # Hugo 0.30
+disableKinds = ['taxonomy', 'term']
 
+disableFastRender = true        # Hugo 0.30
 pygmentsUseClasses = true       # This applies to Chroma too.
 
 # [module]
@@ -18,27 +18,26 @@ pygmentsUseClasses = true       # This applies to Chroma too.
 #     path = "github.com/kaushalmodi/hugo-bare-min-theme"
 
 [[menu.main]]
-name = "Home"
+name = "~"
 url = "/"
 weight = 1
 
 [[menu.main]]
-name = "About"
-url = "/about"
+name = "whoami"
+url = "/whoami"
 weight = 2
 
-# [[menu.main]]
-# name = "Tags"
-# url = "/tags"
-# weight = 3
+[[menu.main]]
+name = "writing"
+url = "/writing"
+weight = 3
 
-# [[menu.main]]
+[[menu.main]]
 # name = "About"
 # url = "/about"
 # weight = 4
 
 [params]
-  colortheme = "white"
   description = "Zach Harris is a polygot software engineer with an insatiable curiosity."
   mainSection = "posts"
   # mainSectionTitle = "Blog"
@@ -70,35 +69,10 @@ weight = 2
 
 [markup]
   [markup.highlight]
-    codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = true
-    noClasses = true
     style = "monokai"
     tabWidth = 2
 
-## Settings from Bare Min Theme
-# [Author]
-#   name = "Zach Harris"
+## For PurgeCSS
+[build]
+  writeStats = true
 
-# [Social]
-#   github = "zacaytion"
-
-# [Params]
-#   description = "Example site for the Hugo Bare Min theme."
-#   intro = """
-# This is an Example Site for the <a href="https://github.com/kaushalmodi/hugo-bare-min-theme">
-# <code>hugo-bare-min-theme</code></a>.
-# """
-#   footer = """
-#   [<a href="/">Test Site home</a>]
-# """
-#   # Note: It is *mandatory* to set "url" below if you want to set
-#   # "md_dir" or "org_dir".
-#   [Params.source]
-#     url = "https://github.com/kaushalmodi/hugo-bare-min-theme" # Needed if you want to see .GitInfo for a page
-#     md_dir = "exampleSite/content"                             # Needed if you want to get a link to Markdown source for each page
-#     # org_dir = "exampleSite/content-org"                        # Needed if you want to get a link to the Org source (e.g. when using ox-hugo!)

@@ -1,0 +1,36 @@
+{
+  "name": "zharr.is",
+  "version": "1.0.0",
+  "description": "This is my personal website. It's a work in progress, currently being rebuilt and redesigned with Hugo.",
+  "main": "\"\"",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zacaytion/zharr.is.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zacaytion/zharr.is/issues"
+  },
+  "homepage": "https://github.com/zacaytion/zharr.is#readme",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "netlify-plugin-submit-sitemap": "^0.4.0",
+    "postcss": "^8.4.18",
+    "postcss-cli": "^10.0.0",
+    "stylelint": "^14.14.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard-scss": "^6.0.0"
+  },
+  "dependencies": {
+    "mathjax": "^3.2.2",
+    "modern-normalize": "^1.1.0",
+    "the-new-css-reset": "^1.7.3"
+  }
+}
