@@ -4,7 +4,7 @@ title = "zharr.is"
 author = "Zach Harris"
 copyright = "Zach Harris"
 
-theme = "hugo-theme-cactus"
+theme = "hugo-tufte-theme"
 enableEmoji = true
 enableGitInfo = true
 
