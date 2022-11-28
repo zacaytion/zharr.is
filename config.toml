@@ -4,9 +4,10 @@ title = "zharr.is"
 author = "Zach Harris"
 copyright = "Zach Harris"
 
-theme = "hugo-tufte-theme"
+theme = "hugo-tufte"
 enableEmoji = true
 enableGitInfo = true
+showPoweredBy = false
 
 disableFastRender = true        # Hugo 0.30
 
